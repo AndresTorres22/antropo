@@ -76,6 +76,14 @@
       text-transform: uppercase;
     }
 
+    /* Contenedor de botones en portada */
+    .botones-portada {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
     .boton {
       display: inline-block;
       padding: 12px 28px;
@@ -267,14 +275,18 @@
 
       <div class="linea"></div>
 
-      <p>Unidad 1 · El cuerpo y sus significados</p>
+      <p>El cuerpo y sus significados</p>
 
-      <a class="boton" href="#unidad-1">Comenzar</a>
+      <!-- Botones hacia Unidad 1 y Unidad 2 -->
+      <div class="botones-portada">
+        <a class="boton" href="#unidad-1">Unidad 1</a>
+        <a class="boton" href="#unidad-2">Unidad 2</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Unidad 1 -->
+    <!-- UNIDAD 1 -->
     <section id="unidad-1" class="unidad">
       <h2>Unidad 1</h2>
 
@@ -289,16 +301,11 @@
       <h2>¿Qué entiendo por cuerpo?</h2>
     </section>
 
-    <!-- Construcción social -->
+    <!-- Unidad 1: Primera mirada -->
     <section>
       <p class="etiqueta">Primera mirada</p>
       <h2 class="titulo-seccion">Cuerpo como construcción social</h2>
-
-      <!--
-        CREA una carpeta llamada "imagenes" junto a index.html.
-        Después reemplaza los nombres de archivo por los nombres
-        exactos de tus cuatro fotos culturales.
-      -->
+      
       <div class="fotos-cultura">
         <div class="foto">
           <img src="fotos/cultura1.jpg" alt="Evidencia visual cultural 1">
@@ -318,8 +325,6 @@
       </div>
 
       <article class="analisis">
-        
-
         <p>
           En mi opinión, David Le Breton muestra que el cuerpo no es solo algo
           biológico, sino que también adquiere significado según la sociedad y
@@ -335,15 +340,11 @@
 
     <div class="separador"></div>
 
-    <!-- Consumo -->
+    <!-- Unidad 1: Segunda mirada -->
     <section>
       <p class="etiqueta">Segunda mirada</p>
       <h2 class="titulo-seccion">Cuerpo como consumo</h2>
 
-      <!--
-        En la misma carpeta "imagenes", coloca tus tres fotos de consumo.
-        Cambia los nombres si tus archivos tienen nombres diferentes.
-      -->
       <div class="fotos-consumo">
         <div class="foto">
           <img src="fotos/consumo1patas.jpg" alt="Evidencia visual de consumo 1">
@@ -359,8 +360,6 @@
       </div>
 
       <article class="analisis">
-      
-
         <p>
           En mi opinión, Baudrillard permite ver cómo, dentro de la sociedad de
           consumo, el cuerpo de las mujeres suele ser tratado más como un
@@ -383,92 +382,214 @@
       </article>
     </section>
 
+    <div class="separador"></div>
 
-<!-- Tercera mirada -->
-<section>
-  <p class="etiqueta">Tercera mirada</p>
+    <!-- Unidad 1: Belleza y Fragmentación -->
+    <section>
+      <h2 class="titulo-seccion">La belleza 'funcional', de cualidad a obligación</h2>
 
-  <h2 class="titulo-seccion">La belleza 'funcional', de cualidad a obligación</h2>
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/belleza1.jpg" alt="La belleza como cualidad y obligación">
+        </div>
 
-  <!-- Dos placeholders para imágenes -->
-  <div class="fotos-consumo">
-    <div class="foto">
-      <img src="fotos/belleza1.jpg" alt="La belleza como cualidad y obligación">
-    </div>
+        <div class="foto">
+          <img src="fotos/belleza2.jpg" alt="La belleza como construcción social">
+        </div>
+      </div>
 
-    <div class="foto">
-      <img src="fotos/belleza2.jpg" alt="La belleza como construcción social">
-    </div>
-  </div>
+      <article class="analisis">
+        <p>
+          Desde la perspectiva de Baudrillard, la belleza deja de ser simplemente
+          una cualidad física y se convierte en un signo que debemos construir y
+          mantener para ser reconocidos socialmente. Las Musas de Hércules
+          representan la belleza como una cualidad deseable: su apariencia, gracia
+          y sensualidad forman parte de aquello que las hace atractivas y admiradas.
+          Sin embargo, con Jocelyn Wildenstein podemos observar cómo esta cualidad
+          puede transformarse en una obligación, donde el cuerpo se convierte en un
+          objeto que debe ser constantemente modificado para responder a los ideales
+          de belleza.
+        </p>
 
-  <article class="analisis">
+        <br>
 
-    <p>
-      Desde la perspectiva de Baudrillard, la belleza deja de ser simplemente
-      una cualidad física y se convierte en un signo que debemos construir y
-      mantener para ser reconocidos socialmente. Las Musas de Hércules
-      representan la belleza como una cualidad deseable: su apariencia, gracia
-      y sensualidad forman parte de aquello que las hace atractivas y admiradas.
-      Sin embargo, con Jocelyn Wildenstein podemos observar cómo esta cualidad
-      puede transformarse en una obligación, donde el cuerpo se convierte en un
-      objeto que debe ser constantemente modificado para responder a los ideales
-      de belleza.
-    </p>
-
-    <br>
-
-    <p>
-      En este sentido, como plantea Baudrillard, no solo consumimos productos
-      para transformar nuestro cuerpo, sino que consumimos una determinada
-      imagen de lo que significa "ser bella". Desde Le Breton, además, el cuerpo
-      está atravesado por las normas y significados de la sociedad en la que
-      vivimos. Así, la belleza deja de ser únicamente algo que tenemos y pasa a
-      ser algo que debemos demostrar y mantener constantemente.
-    </p>
-
-  </article>
+        <p>
+          En este sentido, como plantea Baudrillard, no solo consumimos productos
+          para transformar nuestro cuerpo, sino que consumimos una determinada
+          imagen de lo que significa "ser bella". Desde Le Breton, además, el cuerpo
+          está atravesado por las normas y significados de la sociedad en la que
+          vivimos. Así, la belleza deja de ser únicamente algo que tenemos y pasa a
+          ser algo que debemos demostrar y mantener constantemente.
+        </p>
+      </article>
 
 
-  <h2 class="titulo-seccion" style="margin-top: 75px;">
-    Fragmentar el cuerpo para volverlo un signo
-  </h2>
+      <h2 class="titulo-seccion" style="margin-top: 75px;">
+        Fragmentar el cuerpo para volverlo un signo
+      </h2>
 
-  <!-- Dos placeholders para imágenes -->
-  <div class="fotos-consumo">
-    <div class="foto">
-      <img src="fotos/fragmentar1.jpg" alt="Fragmentación del cuerpo como signo">
-    </div>
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/fragmentar1.jpg" alt="Fragmentación del cuerpo como signo">
+        </div>
 
-    <div class="foto">
-      <img src="fotos/fragmentar2.jpg" alt="El cuerpo como signo de belleza y consumo">
-    </div>
-  </div>
+        <div class="foto">
+          <img src="fotos/fragmentar2.jpg" alt="El cuerpo como signo de belleza y consumo">
+        </div>
+      </div>
 
-  <article class="analisis">
+      <article class="analisis">
+        <p>
+          Siguiendo la misma narrativa de Baudrillard, el cuerpo deja de ser
+          percibido como un todo y puede fragmentarse en diferentes signos que
+          representan belleza, deseo y estatus. Esto puede observarse en las
+          Kardashian, donde ciertas partes del cuerpo —como los labios, la cintura,
+          los glúteos o el rostro— adquieren un valor propio y se convierten en
+          características que pueden ser imitadas, modificadas y consumidas.
+        </p>
 
-    <p>
-      Siguiendo la misma narrativa de Baudrillard, el cuerpo deja de ser
-      percibido como un todo y puede fragmentarse en diferentes signos que
-      representan belleza, deseo y estatus. Esto puede observarse en las
-      Kardashian, donde ciertas partes del cuerpo —como los labios, la cintura,
-      los glúteos o el rostro— adquieren un valor propio y se convierten en
-      características que pueden ser imitadas, modificadas y consumidas.
-    </p>
+        <br>
 
-    <br>
+        <p>
+          Algo similar ocurre con algunas actrices porno, cuyo cuerpo puede ser
+          presentado y valorado a partir de partes específicas, convirtiéndolas en
+          objetos de deseo y consumo. De esta manera, el cuerpo ya no importa
+          únicamente por lo que es, sino por lo que sus diferentes partes significan
+          dentro de una sociedad que constantemente construye y vende ideales de
+          belleza y sexualidad.
+        </p>
+      </article>
+    </section>
 
-    <p>
-      Algo similar ocurre con algunas actrices porno, cuyo cuerpo puede ser
-      presentado y valorado a partir de partes específicas, convirtiéndolas en
-      objetos de deseo y consumo. De esta manera, el cuerpo ya no importa
-      únicamente por lo que es, sino por lo que sus diferentes partes significan
-      dentro de una sociedad que constantemente construye y vende ideales de
-      belleza y sexualidad.
-    </p>
+    <div class="separador"></div>
 
-  </article>
+    <!-- UNIDAD 2 -->
+    <section id="unidad-2" class="unidad">
+      <h2>Unidad 2</h2>
+      <p>El poder, la disciplina, la autoexplotación y el rendimiento sobre el cuerpo.</p>
+    </section>
 
-</section>
+    <!-- Unidad 2: Primera mirada -->
+    <section>
+      <p class="etiqueta">Primera mirada</p>
+      <h2 class="titulo-seccion">¿En qué momentos del día tu cuerpo sigue horarios, normas, filas, exámenes, cámaras, métricas o instrucciones?</h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/control1.jpg" alt="Control y disciplina corporal 1">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/control2.jpg" alt="Control y disciplina corporal 2">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/control3.jpg" alt="Control y disciplina corporal 3">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          Desde la perspectiva de Foucault, el cuerpo deja de ser simplemente una entidad biológica o una posesión personal y se convierte en un territorio investido por el poder, disciplinado y administrado para responder a los estándares de utilidad y normalidad. En el Antiguo Régimen, el cuerpo del rey sostenía de manera física el orden político, encarnando la autoridad soberana; sin embargo, hacia el siglo XIX, el foco se desplaza hacia la administración de la sociedad como un cuerpo social que no nace del consenso, sino del adiestramiento y el control. Con tecnologías cotidianas como los relojes, las cámaras de vigilancia, los carnets, las métricas o las aplicaciones móviles, podemos observar cómo la norma se transforma en una vivencia diaria, donde el cuerpo debe responder constantemente a horarios, exámenes, posturas y dinámicas de rendimiento.
+        </p>
+
+        <br>
+
+        <p>
+          En este sentido, como plantea Foucault, el poder no opera únicamente prohibiendo o castigando desde el Estado, sino que produce activamente los deseos, comportamientos y hábitos de los sujetos. Si con Le Breton el cuerpo se concibe como una propiedad que se fabrica ("tengo un cuerpo") y con Baudrillard como un capital de consumo ("invierto en mi cuerpo"), con Foucault la corporalidad pasa a ser el reflejo de micropoderes que la observan, corrigen y clasifican. Así, la disciplina deja de ser algo externo que nos limita y se convierte en una rutina internalizada que debemos demostrar, obedecer y reproducir constantemente en cada espacio que habitamos.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 2: Segunda mirada -->
+    <section>
+      <p class="etiqueta">Segunda mirada</p>
+
+      <h2 class="titulo-seccion">¿El cansancio actual nace porque alguien nos obliga... o porque aprendimos a exigirnos sin descanso?</h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/estres1.jpg" alt="Estrés y autoexplotación 1">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/estres2.jpg" alt="Estrés y autoexplotación 2">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          Byung-Chul Han plantea que, el cansancio deja de ser simplemente una reacción física al esfuerzo y se convierte en el síntoma visible de una sociedad que pasó del control externo a la autoexplotación voluntaria. Si con Foucault el cuerpo era disciplinado y corregido por instituciones que imponían un "debes" estricto, en la sociedad de rendimiento el sujeto se transforma en un "emprendedor de sí mismo" guiado por un mandato de positividad donde el "puedes" reemplaza a la prohibición. Con realidades cotidianas como la cultura del emprendimiento, la necesidad de actualización constante, la optimización personal y la culpa por descansar, podemos observar cómo la exigencia se interioriza hasta tal punto que la persona se convierte, al mismo tiempo, en verdugo y víctima de su propia productividad.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 2: Tercera mirada -->
+    <section>
+      <p class="etiqueta">Tercera mirada</p>
+      <h2 class="titulo-seccion">¿Si compartimos el mismo espacio físico, por qué no percibimos exactamente el mismo mundo?</h2>
+
+      <article class="analisis">
+        <p>
+          Le Breton plantea que la percepción sensorial deja de ser un simple proceso biológico o un reflejo pasivo de la realidad y se convierte en una interpretación cultural e históricamente construida. Frente a la idea cartesiana de un sujeto puramente mental, Le Breton plantea que existimos primordialmente a través del cuerpo, de modo que "antes de pensar el mundo, lo sentimos". En el Antiguo Régimen o bajo la lógica de la modernidad disciplinaria el cuerpo solía abordarse desde la norma y el control, pero con Le Breton el foco se desplaza hacia la sensibilidad y la experiencia. A través de situaciones cotidianas —como compartir un mismo salón de clase, un bosque o el campus universitario— podemos observar cómo un profesional, una persona perdida o un vigilante perciben realidades completamente distintas según su historia personal, su educación y los valores de su cultura.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 2: Cuarta mirada -->
+    <section>
+      <p class="etiqueta">Cuarta mirada</p>
+
+      <!-- Parte 1: Whiplash -->
+      <h2 class="titulo-seccion">La baqueta y la llaga: Whiplash o la amputación del sentir.</h2>
+      <p style="margin-bottom: 20px;"><a href="https://www.youtube.com/watch?v=7pA_xYbJIbM" target="_blank">Whiplash</a></p>
+      
+      <div class="fotos-consumo" style="grid-template-columns: 1fr; max-width: 400px; margin-bottom: 30px;">
+        <div class="foto">
+          <img src="fotos/miniatura1.jpg" alt="Miniatura Whiplash">
+        </div>
+      </div>
+
+      <article class="analisis" style="margin-bottom: 50px;">
+        <p>
+          A partir de la metodología de análisis fílmico y la práctica de la écfrasis, la experiencia con este fragmento de la película Whiplash demuestra cómo la cámara traduce la tensión y la exigencia física en un impacto directo sobre la sensibilidad del espectador. En el plano de la estética sensorial, la secuencia genera una respuesta somática y visceral mediante planos detalle del sudor desbordado, la rigidez muscular en los brazos, la aceleración del metrónomo y las manchas de sangre fresca en la batería y las baquetas, haciendo que el espectador experimente una tensión física casi tangible. En la dimensión comunicacional, la escena nos confronta con la idea de la perfección artística a cualquier precio, obligándonos a cuestionar el papel del abuso, la violencia y la obsesión por la excelencia en la formación de un músico. La mirada implacable del director de orquesta y la autoexigencia desmedida del protagonista abren la discusión sobre hasta qué punto la búsqueda del talento termina por destruir la integridad física de una persona. Finalmente, en la dimensión poética, el ritmo vertiginoso del montaje induce estados de angustia, claustrofobia, hiperventilación y ansiedad, sumergiéndonos en el torbellino emocional de presenciar a alguien al borde del colapso psicofísico.
+        </p>
+        <br>
+        <p>
+          Desde la perspectiva de David Le Breton, esta experiencia con Whiplash adquiere una profundidad única, pues el sociólogo francés nos recuerda que antes que seres racionales somos seres sensoriales y encarnados: "antes de pensar el mundo, lo sentimos". En este fragmento, la batería deja de ser un instrumento externo para convertirse en una prótesis dolorosa que altera y reconfigura toda la sensorialidad del protagonista. Le Breton sostiene que la percepción no es neutra ni puramente biológica, sino que se encuentra educada y modulada por los valores de la cultura; en Whiplash, la búsqueda obsesiva del éxito reduce todo el universo sensible de Andrew a un único filtro sensorial hipertrofiado: el pulso implacable del metrónomo, el impacto táctil en las baquetas y la ceguera ante el propio dolor. Así, mientras la sociedad moderna enseña a desconectarnos del cuerpo o a utilizarlo como un mero objeto de rendimiento, la secuencia expone la noción lebretoniana del cuerpo como la frontera misma de la existencia humana. La sangre, la rigidez y el sudor no son solo datos visuales: son el testimonio de cómo una disciplina feroz llega a fracturar la afectividad y la relación del individuo con su propio organismo. El filme logra que el espectador no solo piense en la exigencia, sino que la sienta en la piel, demostrando la tesis de Le Breton de que el cuerpo es el territorio donde la cultura cobra vida, a veces a costa de la propia integridad física.
+        </p>
+      </article>
+
+      <!-- Parte 2: Maleficio -->
+      <h2 class="titulo-seccion" style="margin-top: 60px;">La carne profanada: Maleficio y el colapso de la frontera sensible</h2>
+      <p style="margin-bottom: 20px;"><a href="https://www.youtube.com/watch?v=UZX3MXBRA4k" target="_blank">Maleficio</a></p>
+      
+      <div class="fotos-consumo" style="grid-template-columns: 1fr; max-width: 400px; margin-bottom: 30px;">
+        <div class="foto">
+          <img src="fotos/miniatura2.jpg" alt="Miniatura Maleficio">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          La experiencia con esta escena clave de Incantation (Maleficio) demuestra cómo el formato de found footage genera una inmersión directa en la vulnerabilidad y la perturbación del cuerpo humano. En el plano de la estética, la secuencia desencadena una respuesta visceral en el espectador mediante planos desestabilizadores de automutilación, cánticos rituales hipnóticos, la deformación progresiva del rostro y la presencia del dolor físico sin filtro, obligando a quien observa a experimentar una tensión somática e incómoda en su propio cuerpo. En la dimensión comunicacional, la escena invita a cuestionar la frontera entre el fervor religioso, la paranoia psicológica y el sometimiento del cuerpo ante fuerzas o mandatos que lo superan, haciendo pensar en cómo el cuerpo se convierte en el recipiente o canal de una maldición o trauma no resuelto. Finalmente, en la dimensión poética, el uso del encuadre subjetivo y el realismo crudo del material encontrado generan estados de terror claustrofóbico, perturbación profunda, desasosiego y repulsión, sumergiendo al espectador en el abismo emocional de presenciar la ruptura total de la integridad física y mental.
+        </p>
+        <br>
+        <p>
+          Al integrar el pensamiento de David Le Breton a esta lectura de Incantation, la experiencia del horror corporal revela una dimensión antropológica aún más profunda. Le Breton plantea que el cuerpo es la frontera sensible del ser humano en el mundo, la materia a través de la cual otorgamos sentido a la realidad y construimos nuestra identidad. En este clip de Maleficio, la pérdida de control corporal —reflejada en la automutilación y la deformación facial— opera como la ruptura definitiva de esa frontera protectora. Si para Le Breton el cuerpo nos pertenece y es moldeado por los significados culturales que nos sostienen, el ritual de la maldición desarticula completamente esa soberanía, convirtiendo la carne en un mero receptáculo pasivo de una fuerza alienante.
+        </p>
+        <br>
+        <p>
+          Asimismo, Le Breton nos enseña que las percepciones no son ajenas a la cultura ni al cuerpo del otro: "percibir es interpretar", y el dolor ajeno despierta en nosotros una resonancia somática directa. Al emplear el recurso del found footage y la cámara en primera persona, la película no solo muestra el horror, sino que lo transfiere sensorialmente al espectador, alterando su propia corporalidad a través del malestar, la tensión muscular y el desasosiego. El horror no está únicamente en la entidad demoníaca, sino en la fragilidad de nuestra propia encarnación: la escalofriante constatación de que el cuerpo, ese territorio donde habitamos y sentimos el mundo, puede ser invadido, reconfigurado y destruido desde su propio interior.
+        </p>
+      </article>
+    </section>
 
     <!-- Fin -->
     <footer class="fin">
