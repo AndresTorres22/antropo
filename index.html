@@ -222,6 +222,50 @@
       margin: 0;
     }
 
+    /* Estilos de Tabla para la Unidad 3 */
+    .contenedor-tabla {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 35px;
+    }
+
+    .tabla-unidad {
+      width: 100%;
+      border-collapse: collapse;
+      background: #FFF8F4;
+      border: 1px solid var(--linea);
+      text-align: left;
+    }
+
+    .tabla-unidad th {
+      background: var(--principal);
+      color: white;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.1rem;
+      padding: 14px 18px;
+      font-weight: 600;
+    }
+
+    .tabla-unidad td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--linea);
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    .tabla-unidad tr:last-child td {
+      border-bottom: none;
+    }
+
+    .frase-destacada {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--principal);
+      margin: 30px 0 15px;
+      line-height: 1.4;
+    }
+
     /* Cierre */
     .fin {
       padding-top: 30px;
@@ -262,6 +306,10 @@
       .analisis {
         padding: 24px 20px;
       }
+
+      .tabla-unidad th, .tabla-unidad td {
+        padding: 12px 14px;
+      }
     }
   </style>
 </head>
@@ -277,10 +325,12 @@
 
       <p>El cuerpo y sus significados</p>
 
-      <!-- Botones hacia Unidad 1 y Unidad 2 -->
+      <!-- Botones hacia Unidad 1, Unidad 2, Unidad 3 y Unidad 4 -->
       <div class="botones-portada">
         <a class="boton" href="#unidad-1">Unidad 1</a>
         <a class="boton" href="#unidad-2">Unidad 2</a>
+        <a class="boton" href="#unidad-3">Unidad 3</a>
+        <a class="boton" href="#unidad-4">Unidad 4</a>
       </div>
     </div>
   </header>
@@ -407,7 +457,7 @@
           y sensualidad forman parte de aquello que las hace atractivas y admiradas.
           Sin embargo, con Jocelyn Wildenstein podemos observar cómo esta cualidad
           puede transformarse en una obligación, donde el cuerpo se convierte en un
-          objeto que debe ser constantemente modificado para responder a los ideales
+          objeto que debe ser constantemente modificado para responder alos ideales
           de belleza.
         </p>
 
@@ -589,6 +639,143 @@
           Asimismo, Le Breton nos enseña que las percepciones no son ajenas a la cultura ni al cuerpo del otro: "percibir es interpretar", y el dolor ajeno despierta en nosotros una resonancia somática directa. Al emplear el recurso del found footage y la cámara en primera persona, la película no solo muestra el horror, sino que lo transfiere sensorialmente al espectador, alterando su propia corporalidad a través del malestar, la tensión muscular y el desasosiego. El horror no está únicamente en la entidad demoníaca, sino en la fragilidad de nuestra propia encarnación: la escalofriante constatación de que el cuerpo, ese territorio donde habitamos y sentimos el mundo, puede ser invadido, reconfigurado y destruido desde su propio interior.
         </p>
       </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- UNIDAD 3 -->
+    <section id="unidad-3" class="unidad">
+      <h2>Unidad 3</h2>
+      <h2 class="titulo-seccion" style="margin-top: 20px;">
+        ¿Cómo logra una historia hacernos sentir el cuerpo en el papel y de qué manera la literatura nos ayuda a escuchar mejor lo que nuestro propio cuerpo intenta decirnos?
+      </h2>
+
+      <div style="text-align: left; margin-top: 40px;">
+        <h3 style="color: var(--principal); font-family: 'Playfair Display', Georgia, serif; font-size: 1.8rem; margin-bottom: 8px;">
+          Dosis impar — María Ospina
+        </h3>
+        <p style="color: var(--verde-gris); font-weight: 600; font-size: 0.9rem; letter-spacing: 1.2px; margin-bottom: 30px;">
+          El cuerpo de este cuento es: SOMETIDO · FRÁGIL · OBSERVADO
+        </p>
+
+        <!-- Placeholder para la foto 'fragil' -->
+        <div class="fotos-consumo" style="grid-template-columns: 1fr; max-width: 400px; margin-bottom: 35px;">
+          <div class="foto">
+            <img src="fotos/fragil.jpg" alt="Fragil - Dosis Impar">
+          </div>
+        </div>
+
+        <!-- Tabla de los 5 puntos -->
+        <div class="contenedor-tabla">
+          <table class="tabla-unidad">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Dimensión</th>
+                <th style="width: 35%;">Manifestación / Vivencia</th>
+                <th style="width: 40%;">Concepción del cuerpo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. SENTIR</strong></td>
+                <td>El frío, la incertidumbre, el temblor y el peso del procedimiento sobre la piel.</td>
+                <td><strong>El cuerpo vivido:</strong> La experiencia directa de la vulnerabilidad; la brecha entre lo que el paciente siente en su carne y lo que la medicina mide externamente.</td>
+              </tr>
+              <tr>
+                <td><strong>2. MIRADA</strong></td>
+                <td>La mirada experta que examina, evalúa y alterna roles entre el cuidado y el distanciamiento.</td>
+                <td><strong>El cuerpo observado:</strong> La mirada clínica que despersonaliza al sujeto para convertirlo en un objeto de estudio, diagnóstico o intervención.</td>
+              </tr>
+              <tr>
+                <td><strong>3. NORMA</strong></td>
+                <td>El protocolo institucional, las normas de compostura y el lenguaje técnico que sustituye las palabras comunes.</td>
+                <td><strong>El cuerpo clasificado:</strong> Las reglas silenciosas del entorno médico donde el dolor debe ajustarse a un procedimiento y a un protocolo estandarizado.</td>
+              </tr>
+              <tr>
+                <td><strong>4. DESEO / EXIGENCIA</strong></td>
+                <td>El anhelo de alivio y respuesta frente a la exigencia de mantener la calma y someterse al tratamiento.</td>
+                <td><strong>La tensión del control:</strong> La búsqueda de curación enfrentada a la pasividad que la institución exige al cuerpo paciente.</td>
+              </tr>
+              <tr>
+                <td><strong>5. TRANSFORMACIÓN</strong></td>
+                <td>El instante en que la empatía o el contacto rompen la distancia profesional.</td>
+                <td><strong>El gesto ético:</strong> El momento en que la relación médico-paciente descubre que detrás del síntoma hay una vida finita que exige reconocimiento.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Frase y justificación -->
+        <div class="analisis" style="max-width: 100%; margin-bottom: 35px;">
+          <p class="frase-destacada">
+            "Su mano médica atiende la mano de víctima y después alterna roles."
+          </p>
+          <p>
+            Elegí esta frase porque condensa la ambigüedad central del cuento: la frontera invisible donde la autoridad técnica y el acto de cuidar se alternan sobre el cuerpo del otro, revelando la fragilidad de quien sana y de quien es sanado.
+          </p>
+          <br>
+          <p>
+            <strong>Michel Foucault (Cuerpo médico e institucional):</strong> Utilizada para comprender cómo la medicina moderna ejerce un saber/poder sobre el cuerpo, traduciendo el dolor vivido en clasificaciones, códigos y protocolos expertos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pregunta final por fuera de la tabla -->
+    <section class="pregunta">
+      <h2>
+        ¿Coincide siempre aquello que nuestro cuerpo siente y padece en su intimidad con lo que una institución o un diagnóstico médico dicen que ese cuerpo es?
+      </h2>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- UNIDAD 4 -->
+    <section id="unidad-4" class="unidad">
+      <h2>Unidad 4</h2>
+      <h2 class="titulo-seccion" style="margin-top: 20px;">
+        ¿Cuándo un cuerpo deja de ser simplemente una anatomía física para convertirse en una idea, un símbolo o una acción artística?
+      </h2>
+
+      <div style="text-align: left; margin-top: 40px;">
+        
+        <!-- Placeholders de imágenes (2 columnas) -->
+        <div class="fotos-consumo" style="grid-template-columns: repeat(2, 1fr); max-width: 100%; margin-bottom: 35px;">
+          <div class="foto">
+            <img src="fotos/idea1.jpg" alt="Idea 1 - Arte y cuerpo">
+          </div>
+          <div class="foto">
+            <img src="fotos/idea2.jpg" alt="Idea 2 - Arte y cuerpo">
+          </div>
+        </div>
+
+        <article class="analisis" style="max-width: 100%; margin-bottom: 35px;">
+          <p>
+            A lo largo del curso hemos visto cómo el cuerpo se habita, se disciplina y se narra. Al mirar las "Formas de mirar el cuerpo" desde la antropología del arte de Marvin Harris, la carne deja de ser un objeto biológico fijo para convertirse en un territorio modulado por reglas, transformaciones y categorías culturales.
+          </p>
+          <br>
+          <p>
+            La historia del arte demuestra cómo las sociedades inventan distintas formas de hacer visible el cuerpo:
+          </p>
+          <ul style="margin: 15px 0 0 20px; padding: 0;">
+            <li style="margin-bottom: 10px;"><strong>El canon y el ideal:</strong> Cuerpos organizados por la proporción, la simetría y el ideal de belleza que una cultura aprende a contemplar (Doríforo, El nacimiento de Venus).</li>
+            <li style="margin-bottom: 10px;"><strong>La ruptura y la violencia:</strong> Anatomías que se distorsionan o fragmentan para comunicar dolor y tensión política (El 3 de mayo de 1808, Las señoritas de Aviñón).</li>
+            <li style="margin-bottom: 10px;"><strong>El cuerpo como herramienta y material:</strong> En el arte contemporáneo, la artista usa su propia figura para encarnar tipos culturales (Cindy Sherman), deja rastros de su ausencia en la tierra (Ana Mendieta) o explora el peso y el cambio de la piel a través de materiales elásticos (Senga Nengudi).</li>
+            <li><strong>El gesto vivo y cotidiano:</strong> Acciones simples como ordenar objetos (María Teresa Hincapié) o la sola humedad de la respiración sobre un espejo (Óscar Muñoz) se transforman en acontecimiento poético.</li>
+          </ul>
+        </article>
+
+        <!-- Placeholders adicionales (idea3 y idea4) -->
+        <div class="fotos-consumo" style="grid-template-columns: repeat(2, 1fr); max-width: 100%; margin-top: 35px;">
+          <div class="foto">
+            <img src="fotos/idea3.jpg" alt="Idea 3 - Arte y cuerpo">
+          </div>
+          <div class="foto">
+            <img src="fotos/idea4.jpg" alt="Idea 4 - Arte y cuerpo">
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- Fin -->
