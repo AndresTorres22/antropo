@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atlas antropológico</title>
+
+  <!-- Tipografías: títulos elegantes + texto claro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --principal: #A85858;
+      --texto: #292525;
+      --fondo: #FFFDFB;
+      --beige: #D9C2AE;
+      --verde-gris: #6D7A6A;
+      --linea: #E6D8D1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--fondo);
+      font-family: "Montserrat", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    /* Portada */
+    .portada {
+      min-height: 100vh;
+      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .portada-contenido {
+      max-width: 800px;
+    }
+
+    .portada h1 {
+      margin: 0;
+      color: var(--principal);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(3.4rem, 9vw, 7rem);
+      line-height: 1.05;
+    }
+
+    .linea {
+      width: 95px;
+      height: 2px;
+      margin: 26px auto;
+      background: var(--principal);
+    }
+
+    .portada p {
+      margin: 0 0 32px;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Contenedor de botones en portada */
+    .botones-portada {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid var(--principal);
+      color: white;
+      background: var(--principal);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .boton:hover {
+      color: var(--principal);
+      background: transparent;
+    }
+
+    /* Contenido general */
+    main {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 70px 24px 100px;
+    }
+
+    section {
+      margin-bottom: 115px;
+      scroll-margin-top: 40px;
+    }
+
+    .unidad {
+      text-align: center;
+    }
+
+    .unidad h2 {
+      margin: 0;
+      color: var(--principal);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+    }
+
+    .unidad p {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: #5e5555;
+    }
+
+    .separador {
+      width: 100%;
+      height: 1px;
+      margin: 50px 0;
+      background: var(--linea);
+    }
+
+    .pregunta {
+      padding: 72px 20px;
+      text-align: center;
+      background: #FAF2ED;
+    }
+
+    .pregunta h2 {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--principal);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      font-style: italic;
+      line-height: 1.2;
+    }
+
+    .etiqueta {
+      margin: 0 0 10px;
+      color: var(--verde-gris);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .titulo-seccion {
+      margin: 0 0 28px;
+      color: var(--principal);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1.15;
+    }
+
+    /* Fotos horizontales: cultura */
+    .fotos-cultura {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 42px;
+    }
+
+    /* Fotos horizontales: consumo */
+    .fotos-consumo {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 42px;
+    }
+
+    .foto {
+      overflow: hidden;
+      border: 1px solid var(--linea);
+      background: #F0E9E4;
+      aspect-ratio: 4 / 5;
+    }
+
+    .foto img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Bloques de análisis */
+    .analisis {
+      max-width: 850px;
+      padding: 30px 34px;
+      border-left: 4px solid var(--principal);
+      background: #FFF8F4;
+    }
+
+    .analisis h3 {
+      margin: 0 0 12px;
+      color: var(--principal);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.6rem;
+    }
+
+    .analisis p {
+      margin: 0;
+    }
+
+    /* Estilos de Tabla para la Unidad 3 */
+    .contenedor-tabla {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 35px;
+    }
+
+    .tabla-unidad {
+      width: 100%;
+      border-collapse: collapse;
+      background: #FFF8F4;
+      border: 1px solid var(--linea);
+      text-align: left;
+    }
+
+    .tabla-unidad th {
+      background: var(--principal);
+      color: white;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.1rem;
+      padding: 14px 18px;
+      font-weight: 600;
+    }
+
+    .tabla-unidad td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--linea);
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    .tabla-unidad tr:last-child td {
+      border-bottom: none;
+    }
+
+    .frase-destacada {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--principal);
+      margin: 30px 0 15px;
+      line-height: 1.4;
+    }
+
+    /* Cierre */
+    .fin {
+      padding-top: 30px;
+      border-top: 1px solid var(--linea);
+      text-align: center;
+    }
+
+    .fin p {
+      margin: 0;
+      color: var(--verde-gris);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+
+    /* Ajustes para celular */
+    @media (max-width: 760px) {
+      main {
+        padding: 50px 18px 70px;
+      }
+
+      section {
+        margin-bottom: 75px;
+      }
+
+      .fotos-cultura {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fotos-consumo {
+        grid-template-columns: 1fr;
+      }
+
+      .foto {
+        aspect-ratio: 1 / 1;
+      }
+
+      .analisis {
+        padding: 24px 20px;
+      }
+
+      .tabla-unidad th, .tabla-unidad td {
+        padding: 12px 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Portada -->
+  <header class="portada">
+    <div class="portada-contenido">
+      <h1>Atlas antropológico</h1>
+
+      <div class="linea"></div>
+
+      <p>El cuerpo y sus significados</p>
+
+      <!-- Botones hacia Unidad 1, Unidad 2, Unidad 3 y Unidad 4 -->
+      <div class="botones-portada">
+        <a class="boton" href="#unidad-1">Unidad 1</a>
+        <a class="boton" href="#unidad-2">Unidad 2</a>
+        <a class="boton" href="#unidad-3">Unidad 3</a>
+        <a class="boton" href="#unidad-4">Unidad 4</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- UNIDAD 1 -->
+    <section id="unidad-1" class="unidad">
+      <h2>Unidad 1</h2>
+
+      <p>
+        Una aproximación al cuerpo como experiencia social, cultural
+        y como objeto dentro de la sociedad de consumo.
+      </p>
+    </section>
+
+    <!-- Pregunta sola -->
+    <section class="pregunta">
+      <h2>¿Qué entiendo por cuerpo?</h2>
+    </section>
+
+    <!-- Unidad 1: Primera mirada -->
+    <section>
+      <p class="etiqueta">Primera mirada</p>
+      <h2 class="titulo-seccion">Cuerpo como construcción social</h2>
+      
+      <div class="fotos-cultura">
+        <div class="foto">
+          <img src="fotos/cultura1.jpg" alt="Evidencia visual cultural 1">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/cultura2zlatan.jpg" alt="Evidencia visual cultural 2">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/cultura3indu.jpg" alt="Evidencia visual cultural 3">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/cultura4shaolin.jpg" alt="Evidencia visual cultural 4">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          En mi opinión, David Le Breton muestra que el cuerpo no es solo algo
+          biológico, sino que también adquiere significado según la sociedad y
+          la cultura en que vivimos. Me parece interesante porque muchas ideas
+          que consideramos normales (como la belleza, la salud o la forma
+          correcta de vestir) en realidad han sido construidas socialmente. El
+          texto también invita a cuestionar los modelos que privilegian cuerpos
+          jóvenes, “perfectos” y productivos, ya que pueden excluir otras formas
+          de vivir y experimentar el cuerpo.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 1: Segunda mirada -->
+    <section>
+      <p class="etiqueta">Segunda mirada</p>
+      <h2 class="titulo-seccion">Cuerpo como consumo</h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/consumo1patas.jpg" alt="Evidencia visual de consumo 1">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/consumo2curvas.jpg" alt="Evidencia visual de consumo 2">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/consumo3only.jpg" alt="Evidencia visual de consumo 3">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          En mi opinión, Baudrillard permite ver cómo, dentro de la sociedad de
+          consumo, el cuerpo de las mujeres suele ser tratado más como un
+          producto que como parte de una persona con identidad, decisiones y
+          experiencias propias. La publicidad, la moda y las redes sociales
+          presentan constantemente cuerpos femeninos como imágenes que deben ser
+          atractivas, jóvenes y “perfectas” para llamar la atención o vender
+          algo. Esto puede reducir a las mujeres a su apariencia física y hacer
+          que se valore más cómo se ven que lo que piensan, sienten o hacen.
+        </p>
+
+        <br>
+
+        <p>
+          Me parece importante cuestionar esta idea porque no debería existir
+          una obligación de cumplir con un modelo de belleza para ser aceptada.
+          El cuerpo no es mercancía ni decoración: es parte de una persona y
+          merece respeto, diversidad y autonomía.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 1: Belleza y Fragmentación -->
+    <section>
+      <h2 class="titulo-seccion">La belleza 'funcional', de cualidad a obligación</h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/belleza1.jpg" alt="La belleza como cualidad y obligación">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/belleza2.jpg" alt="La belleza como construcción social">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          Desde la perspectiva de Baudrillard, la belleza deja de ser simplemente
+          una cualidad física y se convierte en un signo que debemos construir y
+          mantener para ser reconocidos socialmente. Las Musas de Hércules
+          representan la belleza como una cualidad deseable: su apariencia, gracia
+          y sensualidad forman parte de aquello que las hace atractivas y admiradas.
+          Sin embargo, con Jocelyn Wildenstein podemos observar cómo esta cualidad
+          puede transformarse en una obligación, donde el cuerpo se convierte en un
+          objeto que debe ser constantemente modificado para responder alos ideales
+          de belleza.
+        </p>
+
+        <br>
+
+        <p>
+          En este sentido, como plantea Baudrillard, no solo consumimos productos
+          para transformar nuestro cuerpo, sino que consumimos una determinada
+          imagen de lo que significa "ser bella". Desde Le Breton, además, el cuerpo
+          está atravesado por las normas y significados de la sociedad en la que
+          vivimos. Así, la belleza deja de ser únicamente algo que tenemos y pasa a
+          ser algo que debemos demostrar y mantener constantemente.
+        </p>
+      </article>
+
+
+      <h2 class="titulo-seccion" style="margin-top: 75px;">
+        Fragmentar el cuerpo para volverlo un signo
+      </h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/fragmentar1.jpg" alt="Fragmentación del cuerpo como signo">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/fragmentar2.jpg" alt="El cuerpo como signo de belleza y consumo">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          Siguiendo la misma narrativa de Baudrillard, el cuerpo deja de ser
+          percibido como un todo y puede fragmentarse en diferentes signos que
+          representan belleza, deseo y estatus. Esto puede observarse en las
+          Kardashian, donde ciertas partes del cuerpo —como los labios, la cintura,
+          los glúteos o el rostro— adquieren un valor propio y se convierten en
+          características que pueden ser imitadas, modificadas y consumidas.
+        </p>
+
+        <br>
+
+        <p>
+          Algo similar ocurre con algunas actrices porno, cuyo cuerpo puede ser
+          presentado y valorado a partir de partes específicas, convirtiéndolas en
+          objetos de deseo y consumo. De esta manera, el cuerpo ya no importa
+          únicamente por lo que es, sino por lo que sus diferentes partes significan
+          dentro de una sociedad que constantemente construye y vende ideales de
+          belleza y sexualidad.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- UNIDAD 2 -->
+    <section id="unidad-2" class="unidad">
+      <h2>Unidad 2</h2>
+      <p>El poder, la disciplina, la autoexplotación y el rendimiento sobre el cuerpo.</p>
+    </section>
+
+    <!-- Unidad 2: Primera mirada -->
+    <section>
+      <p class="etiqueta">Primera mirada</p>
+      <h2 class="titulo-seccion">¿En qué momentos del día tu cuerpo sigue horarios, normas, filas, exámenes, cámaras, métricas o instrucciones?</h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/control1.jpg" alt="Control y disciplina corporal 1">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/control2.jpg" alt="Control y disciplina corporal 2">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/control3.jpg" alt="Control y disciplina corporal 3">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          Desde la perspectiva de Foucault, el cuerpo deja de ser simplemente una entidad biológica o una posesión personal y se convierte en un territorio investido por el poder, disciplinado y administrado para responder a los estándares de utilidad y normalidad. En el Antiguo Régimen, el cuerpo del rey sostenía de manera física el orden político, encarnando la autoridad soberana; sin embargo, hacia el siglo XIX, el foco se desplaza hacia la administración de la sociedad como un cuerpo social que no nace del consenso, sino del adiestramiento y el control. Con tecnologías cotidianas como los relojes, las cámaras de vigilancia, los carnets, las métricas o las aplicaciones móviles, podemos observar cómo la norma se transforma en una vivencia diaria, donde el cuerpo debe responder constantemente a horarios, exámenes, posturas y dinámicas de rendimiento.
+        </p>
+
+        <br>
+
+        <p>
+          En este sentido, como plantea Foucault, el poder no opera únicamente prohibiendo o castigando desde el Estado, sino que produce activamente los deseos, comportamientos y hábitos de los sujetos. Si con Le Breton el cuerpo se concibe como una propiedad que se fabrica ("tengo un cuerpo") y con Baudrillard como un capital de consumo ("invierto en mi cuerpo"), con Foucault la corporalidad pasa a ser el reflejo de micropoderes que la observan, corrigen y clasifican. Así, la disciplina deja de ser algo externo que nos limita y se convierte en una rutina internalizada que debemos demostrar, obedecer y reproducir constantemente en cada espacio que habitamos.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 2: Segunda mirada -->
+    <section>
+      <p class="etiqueta">Segunda mirada</p>
+
+      <h2 class="titulo-seccion">¿El cansancio actual nace porque alguien nos obliga... o porque aprendimos a exigirnos sin descanso?</h2>
+
+      <div class="fotos-consumo">
+        <div class="foto">
+          <img src="fotos/estres1.jpg" alt="Estrés y autoexplotación 1">
+        </div>
+
+        <div class="foto">
+          <img src="fotos/estres2.jpg" alt="Estrés y autoexplotación 2">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          Byung-Chul Han plantea que, el cansancio deja de ser simplemente una reacción física al esfuerzo y se convierte en el síntoma visible de una sociedad que pasó del control externo a la autoexplotación voluntaria. Si con Foucault el cuerpo era disciplinado y corregido por instituciones que imponían un "debes" estricto, en la sociedad de rendimiento el sujeto se transforma en un "emprendedor de sí mismo" guiado por un mandato de positividad donde el "puedes" reemplaza a la prohibición. Con realidades cotidianas como la cultura del emprendimiento, la necesidad de actualización constante, la optimización personal y la culpa por descansar, podemos observar cómo la exigencia se interioriza hasta tal punto que la persona se convierte, al mismo tiempo, en verdugo y víctima de su propia productividad.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 2: Tercera mirada -->
+    <section>
+      <p class="etiqueta">Tercera mirada</p>
+      <h2 class="titulo-seccion">¿Si compartimos el mismo espacio físico, por qué no percibimos exactamente el mismo mundo?</h2>
+
+      <article class="analisis">
+        <p>
+          Le Breton plantea que la percepción sensorial deja de ser un simple proceso biológico o un reflejo pasivo de la realidad y se convierte en una interpretación cultural e históricamente construida. Frente a la idea cartesiana de un sujeto puramente mental, Le Breton plantea que existimos primordialmente a través del cuerpo, de modo que "antes de pensar el mundo, lo sentimos". En el Antiguo Régimen o bajo la lógica de la modernidad disciplinaria el cuerpo solía abordarse desde la norma y el control, pero con Le Breton el foco se desplaza hacia la sensibilidad y la experiencia. A través de situaciones cotidianas —como compartir un mismo salón de clase, un bosque o el campus universitario— podemos observar cómo un profesional, una persona perdida o un vigilante perciben realidades completamente distintas según su historia personal, su educación y los valores de su cultura.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- Unidad 2: Cuarta mirada -->
+    <section>
+      <p class="etiqueta">Cuarta mirada</p>
+
+      <!-- Parte 1: Whiplash -->
+      <h2 class="titulo-seccion">La baqueta y la llaga: Whiplash o la amputación del sentir.</h2>
+      <p style="margin-bottom: 20px;"><a href="https://www.youtube.com/watch?v=7pA_xYbJIbM" target="_blank">Whiplash</a></p>
+      
+      <div class="fotos-consumo" style="grid-template-columns: 1fr; max-width: 400px; margin-bottom: 30px;">
+        <div class="foto">
+          <img src="fotos/miniatura1.jpg" alt="Miniatura Whiplash">
+        </div>
+      </div>
+
+      <article class="analisis" style="margin-bottom: 50px;">
+        <p>
+          A partir de la metodología de análisis fílmico y la práctica de la écfrasis, la experiencia con este fragmento de la película Whiplash demuestra cómo la cámara traduce la tensión y la exigencia física en un impacto directo sobre la sensibilidad del espectador. En el plano de la estética sensorial, la secuencia genera una respuesta somática y visceral mediante planos detalle del sudor desbordado, la rigidez muscular en los brazos, la aceleración del metrónomo y las manchas de sangre fresca en la batería y las baquetas, haciendo que el espectador experimente una tensión física casi tangible. En la dimensión comunicacional, la escena nos confronta con la idea de la perfección artística a cualquier precio, obligándonos a cuestionar el papel del abuso, la violencia y la obsesión por la excelencia en la formación de un músico. La mirada implacable del director de orquesta y la autoexigencia desmedida del protagonista abren la discusión sobre hasta qué punto la búsqueda del talento termina por destruir la integridad física de una persona. Finalmente, en la dimensión poética, el ritmo vertiginoso del montaje induce estados de angustia, claustrofobia, hiperventilación y ansiedad, sumergiéndonos en el torbellino emocional de presenciar a alguien al borde del colapso psicofísico.
+        </p>
+        <br>
+        <p>
+          Desde la perspectiva de David Le Breton, esta experiencia con Whiplash adquiere una profundidad única, pues el sociólogo francés nos recuerda que antes que seres racionales somos seres sensoriales y encarnados: "antes de pensar el mundo, lo sentimos". En este fragmento, la batería deja de ser un instrumento externo para convertirse en una prótesis dolorosa que altera y reconfigura toda la sensorialidad del protagonista. Le Breton sostiene que la percepción no es neutra ni puramente biológica, sino que se encuentra educada y modulada por los valores de la cultura; en Whiplash, la búsqueda obsesiva del éxito reduce todo el universo sensible de Andrew a un único filtro sensorial hipertrofiado: el pulso implacable del metrónomo, el impacto táctil en las baquetas y la ceguera ante el propio dolor. Así, mientras la sociedad moderna enseña a desconectarnos del cuerpo o a utilizarlo como un mero objeto de rendimiento, la secuencia expone la noción lebretoniana del cuerpo como la frontera misma de la existencia humana. La sangre, la rigidez y el sudor no son solo datos visuales: son el testimonio de cómo una disciplina feroz llega a fracturar la afectividad y la relación del individuo con su propio organismo. El filme logra que el espectador no solo piense en la exigencia, sino que la sienta en la piel, demostrando la tesis de Le Breton de que el cuerpo es el territorio donde la cultura cobra vida, a veces a costa de la propia integridad física.
+        </p>
+      </article>
+
+      <!-- Parte 2: Maleficio -->
+      <h2 class="titulo-seccion" style="margin-top: 60px;">La carne profanada: Maleficio y el colapso de la frontera sensible</h2>
+      <p style="margin-bottom: 20px;"><a href="https://www.youtube.com/watch?v=UZX3MXBRA4k" target="_blank">Maleficio</a></p>
+      
+      <div class="fotos-consumo" style="grid-template-columns: 1fr; max-width: 400px; margin-bottom: 30px;">
+        <div class="foto">
+          <img src="fotos/miniatura2.jpg" alt="Miniatura Maleficio">
+        </div>
+      </div>
+
+      <article class="analisis">
+        <p>
+          La experiencia con esta escena clave de Incantation (Maleficio) demuestra cómo el formato de found footage genera una inmersión directa en la vulnerabilidad y la perturbación del cuerpo humano. En el plano de la estética, la secuencia desencadena una respuesta visceral en el espectador mediante planos desestabilizadores de automutilación, cánticos rituales hipnóticos, la deformación progresiva del rostro y la presencia del dolor físico sin filtro, obligando a quien observa a experimentar una tensión somática e incómoda en su propio cuerpo. En la dimensión comunicacional, la escena invita a cuestionar la frontera entre el fervor religioso, la paranoia psicológica y el sometimiento del cuerpo ante fuerzas o mandatos que lo superan, haciendo pensar en cómo el cuerpo se convierte en el recipiente o canal de una maldición o trauma no resuelto. Finalmente, en la dimensión poética, el uso del encuadre subjetivo y el realismo crudo del material encontrado generan estados de terror claustrofóbico, perturbación profunda, desasosiego y repulsión, sumergiendo al espectador en el abismo emocional de presenciar la ruptura total de la integridad física y mental.
+        </p>
+        <br>
+        <p>
+          Al integrar el pensamiento de David Le Breton a esta lectura de Incantation, la experiencia del horror corporal revela una dimensión antropológica aún más profunda. Le Breton plantea que el cuerpo es la frontera sensible del ser humano en el mundo, la materia a través de la cual otorgamos sentido a la realidad y construimos nuestra identidad. En este clip de Maleficio, la pérdida de control corporal —reflejada en la automutilación y la deformación facial— opera como la ruptura definitiva de esa frontera protectora. Si para Le Breton el cuerpo nos pertenece y es moldeado por los significados culturales que nos sostienen, el ritual de la maldición desarticula completamente esa soberanía, convirtiendo la carne en un mero receptáculo pasivo de una fuerza alienante.
+        </p>
+        <br>
+        <p>
+          Asimismo, Le Breton nos enseña que las percepciones no son ajenas a la cultura ni al cuerpo del otro: "percibir es interpretar", y el dolor ajeno despierta en nosotros una resonancia somática directa. Al emplear el recurso del found footage y la cámara en primera persona, la película no solo muestra el horror, sino que lo transfiere sensorialmente al espectador, alterando su propia corporalidad a través del malestar, la tensión muscular y el desasosiego. El horror no está únicamente en la entidad demoníaca, sino en la fragilidad de nuestra propia encarnación: la escalofriante constatación de que el cuerpo, ese territorio donde habitamos y sentimos el mundo, puede ser invadido, reconfigurado y destruido desde su propio interior.
+        </p>
+      </article>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- UNIDAD 3 -->
+    <section id="unidad-3" class="unidad">
+      <h2>Unidad 3</h2>
+      <h2 class="titulo-seccion" style="margin-top: 20px;">
+        ¿Cómo logra una historia hacernos sentir el cuerpo en el papel y de qué manera la literatura nos ayuda a escuchar mejor lo que nuestro propio cuerpo intenta decirnos?
+      </h2>
+
+      <div style="text-align: left; margin-top: 40px;">
+        <h3 style="color: var(--principal); font-family: 'Playfair Display', Georgia, serif; font-size: 1.8rem; margin-bottom: 8px;">
+          Dosis impar — María Ospina
+        </h3>
+        <p style="color: var(--verde-gris); font-weight: 600; font-size: 0.9rem; letter-spacing: 1.2px; margin-bottom: 30px;">
+          El cuerpo de este cuento es: SOMETIDO · FRÁGIL · OBSERVADO
+        </p>
+
+        <!-- Placeholder para la foto 'fragil' -->
+        <div class="fotos-consumo" style="grid-template-columns: 1fr; max-width: 400px; margin-bottom: 35px;">
+          <div class="foto">
+            <img src="fotos/fragil.jpg" alt="Fragil - Dosis Impar">
+          </div>
+        </div>
+
+        <!-- Tabla de los 5 puntos -->
+        <div class="contenedor-tabla">
+          <table class="tabla-unidad">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Dimensión</th>
+                <th style="width: 35%;">Manifestación / Vivencia</th>
+                <th style="width: 40%;">Concepción del cuerpo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. SENTIR</strong></td>
+                <td>El frío, la incertidumbre, el temblor y el peso del procedimiento sobre la piel.</td>
+                <td><strong>El cuerpo vivido:</strong> La experiencia directa de la vulnerabilidad; la brecha entre lo que el paciente siente en su carne y lo que la medicina mide externamente.</td>
+              </tr>
+              <tr>
+                <td><strong>2. MIRADA</strong></td>
+                <td>La mirada experta que examina, evalúa y alterna roles entre el cuidado y el distanciamiento.</td>
+                <td><strong>El cuerpo observado:</strong> La mirada clínica que despersonaliza al sujeto para convertirlo en un objeto de estudio, diagnóstico o intervención.</td>
+              </tr>
+              <tr>
+                <td><strong>3. NORMA</strong></td>
+                <td>El protocolo institucional, las normas de compostura y el lenguaje técnico que sustituye las palabras comunes.</td>
+                <td><strong>El cuerpo clasificado:</strong> Las reglas silenciosas del entorno médico donde el dolor debe ajustarse a un procedimiento y a un protocolo estandarizado.</td>
+              </tr>
+              <tr>
+                <td><strong>4. DESEO / EXIGENCIA</strong></td>
+                <td>El anhelo de alivio y respuesta frente a la exigencia de mantener la calma y someterse al tratamiento.</td>
+                <td><strong>La tensión del control:</strong> La búsqueda de curación enfrentada a la pasividad que la institución exige al cuerpo paciente.</td>
+              </tr>
+              <tr>
+                <td><strong>5. TRANSFORMACIÓN</strong></td>
+                <td>El instante en que la empatía o el contacto rompen la distancia profesional.</td>
+                <td><strong>El gesto ético:</strong> El momento en que la relación médico-paciente descubre que detrás del síntoma hay una vida finita que exige reconocimiento.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Frase y justificación -->
+        <div class="analisis" style="max-width: 100%; margin-bottom: 35px;">
+          <p class="frase-destacada">
+            "Su mano médica atiende la mano de víctima y después alterna roles."
+          </p>
+          <p>
+            Elegí esta frase porque condensa la ambigüedad central del cuento: la frontera invisible donde la autoridad técnica y el acto de cuidar se alternan sobre el cuerpo del otro, revelando la fragilidad de quien sana y de quien es sanado.
+          </p>
+          <br>
+          <p>
+            <strong>Michel Foucault (Cuerpo médico e institucional):</strong> Utilizada para comprender cómo la medicina moderna ejerce un saber/poder sobre el cuerpo, traduciendo el dolor vivido en clasificaciones, códigos y protocolos expertos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pregunta final por fuera de la tabla -->
+    <section class="pregunta">
+      <h2>
+        ¿Coincide siempre aquello que nuestro cuerpo siente y padece en su intimidad con lo que una institución o un diagnóstico médico dicen que ese cuerpo es?
+      </h2>
+    </section>
+
+    <div class="separador"></div>
+
+    <!-- UNIDAD 4 -->
+    <section id="unidad-4" class="unidad">
+      <h2>Unidad 4</h2>
+      <h2 class="titulo-seccion" style="margin-top: 20px;">
+        ¿Cuándo un cuerpo deja de ser simplemente una anatomía física para convertirse en una idea, un símbolo o una acción artística?
+      </h2>
+
+      <div style="text-align: left; margin-top: 40px;">
+        
+        <!-- Placeholders de imágenes (2 columnas) -->
+        <div class="fotos-consumo" style="grid-template-columns: repeat(2, 1fr); max-width: 100%; margin-bottom: 35px;">
+          <div class="foto">
+            <img src="fotos/idea1.jpg" alt="Idea 1 - Arte y cuerpo">
+          </div>
+          <div class="foto">
+            <img src="fotos/idea2.jpg" alt="Idea 2 - Arte y cuerpo">
+          </div>
+        </div>
+
+        <article class="analisis" style="max-width: 100%; margin-bottom: 35px;">
+          <p>
+            A lo largo del curso hemos visto cómo el cuerpo se habita, se disciplina y se narra. Al mirar las "Formas de mirar el cuerpo" desde la antropología del arte de Marvin Harris, la carne deja de ser un objeto biológico fijo para convertirse en un territorio modulado por reglas, transformaciones y categorías culturales.
+          </p>
+          <br>
+          <p>
+            La historia del arte demuestra cómo las sociedades inventan distintas formas de hacer visible el cuerpo:
+          </p>
+          <ul style="margin: 15px 0 0 20px; padding: 0;">
+            <li style="margin-bottom: 10px;"><strong>El canon y el ideal:</strong> Cuerpos organizados por la proporción, la simetría y el ideal de belleza que una cultura aprende a contemplar (Doríforo, El nacimiento de Venus).</li>
+            <li style="margin-bottom: 10px;"><strong>La ruptura y la violencia:</strong> Anatomías que se distorsionan o fragmentan para comunicar dolor y tensión política (El 3 de mayo de 1808, Las señoritas de Aviñón).</li>
+            <li style="margin-bottom: 10px;"><strong>El cuerpo como herramienta y material:</strong> En el arte contemporáneo, la artista usa su propia figura para encarnar tipos culturales (Cindy Sherman), deja rastros de su ausencia en la tierra (Ana Mendieta) o explora el peso y el cambio de la piel a través de materiales elásticos (Senga Nengudi).</li>
+            <li><strong>El gesto vivo y cotidiano:</strong> Acciones simples como ordenar objetos (María Teresa Hincapié) o la sola humedad de la respiración sobre un espejo (Óscar Muñoz) se transforman en acontecimiento poético.</li>
+          </ul>
+        </article>
+
+        <!-- Placeholders adicionales (idea3 y idea4) -->
+        <div class="fotos-consumo" style="grid-template-columns: repeat(2, 1fr); max-width: 100%; margin-top: 35px;">
+          <div class="foto">
+            <img src="fotos/idea3.jpg" alt="Idea 3 - Arte y cuerpo">
+          </div>
+          <div class="foto">
+            <img src="fotos/idea4.jpg" alt="Idea 4 - Arte y cuerpo">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Fin -->
+    <footer class="fin">
+      <p>Fin del proyecto</p>
+    </footer>
+  </main>
+
+</body>
+</html>
